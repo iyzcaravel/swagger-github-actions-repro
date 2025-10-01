@@ -33,7 +33,7 @@ jobs:
     - name: Setup .NET environment
       uses: ./.github/actions/setup-dotnet
       with:
-        working-directory: 'apps/backend'
+        working-directory: './'
         
     - name: Check Style
       id: style
