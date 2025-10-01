@@ -1,0 +1,42 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Gateway, Version=0.0.1.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Gateway, Version=0.0.1.0, Culture=neutral, PublicKeyToken=null"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/String<>f__AnonymousType0"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "String<>f__AnonymousType0": {
+        "type": "object",
+        "properties": {
+          "hello": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

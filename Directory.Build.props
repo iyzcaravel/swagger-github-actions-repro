@@ -1,0 +1,28 @@
+<Project>
+
+    <PropertyGroup>
+        <SolutionRoot>$(MSBuildThisFileDirectory)</SolutionRoot>
+        <SrcRoot>$(MSBuildThisFileDirectory)src</SrcRoot>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <InvariantGlobalization>true</InvariantGlobalization>
+        <Version>$(GitVersion_FullSemVer)</Version>
+        <AssemblyVersion>$(GitVersion_AssemblySemVer)</AssemblyVersion>
+        <FileVersion>$(GitVersion_AssemblySemVer)</FileVersion>
+        <ServerGarbageCollection>true</ServerGarbageCollection>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="GitVersion.MsBuild">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+</Project>

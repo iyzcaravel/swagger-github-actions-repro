@@ -1,0 +1,10 @@
+<Project>
+  <!-- Skip in Release builds to avoid Swagger CLI issues in containers -->
+  <Target Name="SwaggerToFile" AfterTargets="AfterBuild"
+    Condition="'$(Configuration)' != 'Release'">
+    <Message Importance="high" Text="Genearting Spec.Json" />
+    <Exec
+      EnvironmentVariables="SWAGGER_TO_FILE=true"
+      Command="dotnet swagger tofile --output $(SolutionRoot)Spec.json $(OutputPath)$(AssemblyName).dll v1" />
+  </Target>
+</Project>

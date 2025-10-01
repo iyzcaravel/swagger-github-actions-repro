@@ -1,0 +1,8 @@
+<Project>
+
+    <ItemGroup>
+        <ProjectReference Include="$(SrcRoot)/Common/Prebuild/RestoreDotnetTools.csproj" />
+    </ItemGroup>
+
+</Project>
+  

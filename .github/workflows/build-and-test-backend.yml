@@ -1,0 +1,46 @@
+name: Build and Test Backend
+
+permissions:
+  pull-requests: write
+  contents: read
+  actions: read
+  checks: write
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - '**'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - '**'
+
+
+concurrency:
+  group: backend-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+    - uses: actions/checkout@v5
+    
+    - name: Setup .NET environment
+      uses: ./.github/actions/setup-dotnet
+      with:
+        working-directory: 'apps/backend'
+        
+    - name: Check Style
+      id: style
+      run: |
+        if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q '.cs'; then
+          dotnet tool update dotnet-format -g && dotnet format --verify-no-changes
+        fi
+
+    - name: Build
+      run: dotnet build --no-restore
