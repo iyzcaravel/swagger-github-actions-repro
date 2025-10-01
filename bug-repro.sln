@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BFF2DF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestoreDotnetTools", "src\Common\Prebuild\RestoreDotnetTools.csproj", "{5D5C2B6F-2D83-6E14-3A91-084D3CDD8BAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "src\Common\Gateway\Gateway.csproj", "{76D45AAB-4DB8-D3BE-C566-907729729201}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "src\Gateway\Gateway.csproj", "{76D45AAB-4DB8-D3BE-C566-907729729201}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
