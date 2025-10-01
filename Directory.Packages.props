@@ -31,7 +31,7 @@
         <PackageVersion Include="OpenTelemetry.Instrumentation.EntityFrameworkCore"
             Version="1.12.0-beta.2" />
         <PackageVersion Include="RT.Comb.AspNetCore" Version="4.0.3" />
-        <PackageVersion Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+        <PackageVersion Include="Swashbuckle.AspNetCore" Version="9.0.5" />
         <PackageVersion Include="Testcontainers.PostgreSql" Version="4.1.0" />
         <PackageVersion Include="Unchase.Swashbuckle.AspNetCore.Extensions" Version="2.7.1" />
         <PackageVersion Include="coverlet.collector" Version="6.0.4" />
