@@ -2,10 +2,12 @@
 
   <Target Name="RestoreDotnetTools" BeforeTargets="Build">
     <Message Importance="High" Text="[RestoreDotnetTools] Starting dotnet tool restore..." />
-    <Exec Command="dotnet tool restore"
-          ContinueOnError="false"
-          IgnoreExitCode="false" />
-    <Message Importance="High" Text="[RestoreDotnetTools] Completed dotnet tool restore successfully." />
+    <Exec WorkingDirectory="$(SolutionRoot)"
+      Command="dotnet tool restore"
+      ContinueOnError="false"
+      IgnoreExitCode="false" />
+    <Message Importance="High"
+      Text="[RestoreDotnetTools] Completed dotnet tool restore successfully." />
   </Target>
 
   <Target Name="Build" DependsOnTargets="RestoreDotnetTools" />
