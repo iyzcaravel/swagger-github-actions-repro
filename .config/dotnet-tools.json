@@ -7,7 +7,7 @@
             "commands": [
                 "swagger"
             ],
-            "rollForward": true
+            "rollForward": false
         },
         "dotnet-ef": {
             "version": "8.0.20",
