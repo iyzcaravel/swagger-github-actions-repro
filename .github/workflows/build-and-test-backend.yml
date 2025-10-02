@@ -43,4 +43,12 @@ jobs:
         fi
 
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore /bl:msbuild.binlog
+      
+    - name: Upload MSBuild Binary Log
+      uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: msbuild-binlog
+        path: msbuild.binlog
+        retention-days: 5
