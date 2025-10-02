@@ -2,11 +2,17 @@
 
   <Target Name="RestoreDotnetTools" BeforeTargets="Build">
     <Message Importance="High" Text="[RestoreDotnetTools] Starting dotnet tool restore..." />
-    <Message Importance="High" Text="DOTNET_HOST_PATH = $(DOTNET_HOST_PATH)" />
 
-    <Exec Command="&quot;$(DOTNET_HOST_PATH)&quot; tool restore"
+    <!-- Run dotnet tool restore and capture output -->
+    <Exec Command="dotnet tool restore -v diag"
       ContinueOnError="false"
-      IgnoreExitCode="false" />
+      IgnoreExitCode="false"
+      ConsoleToMSBuild="true">
+      <Output TaskParameter="ConsoleOutput" PropertyName="RestoreDotnetToolsOutput" />
+    </Exec>
+
+    <!-- Log combined output -->
+    <Message Importance="High" Text="[RestoreDotnetTools] Output: $(RestoreDotnetToolsOutput)" />
 
     <Message Importance="High"
       Text="[RestoreDotnetTools] Completed dotnet tool restore successfully." />
