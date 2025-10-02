@@ -5,6 +5,6 @@
     <Message Importance="high" Text="Genearting Spec.Json" />
     <Exec
       EnvironmentVariables="SWAGGER_TO_FILE=true"
-      Command="dotnet swagger tofile --output $(SolutionRoot)Spec.json $(OutputPath)$(AssemblyName).dll v1" />
+      Command="$(DotNetExe) swagger tofile --output $(SolutionRoot)Spec.json $(OutputPath)$(AssemblyName).dll v1" />
   </Target>
 </Project>
