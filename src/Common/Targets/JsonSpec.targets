@@ -3,6 +3,7 @@
   <Target Name="SwaggerToFile" AfterTargets="AfterBuild"
     Condition="'$(Configuration)' != 'Release'">
     <Message Importance="high" Text="Genearting Spec.Json" />
+    <Message Importance="high" Text="DOTNET_HOST_PATH = $(DOTNET_HOST_PATH)" />
     <Exec
       EnvironmentVariables="SWAGGER_TO_FILE=true"
       Command="&quot;$(DOTNET_HOST_PATH)&quot; swagger tofile --output $(SolutionRoot)Spec.json $(OutputPath)$(AssemblyName).dll v1" />

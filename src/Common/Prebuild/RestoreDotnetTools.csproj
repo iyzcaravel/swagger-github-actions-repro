@@ -2,10 +2,12 @@
 
   <Target Name="RestoreDotnetTools" BeforeTargets="Build">
     <Message Importance="High" Text="[RestoreDotnetTools] Starting dotnet tool restore..." />
-    <Exec WorkingDirectory="$(SolutionRoot)"
-      Command="dotnet tool restore"
+    <Message Importance="High" Text="DOTNET_HOST_PATH = $(DOTNET_HOST_PATH)" />
+
+    <Exec Command="&quot;$(DOTNET_HOST_PATH)&quot; tool restore"
       ContinueOnError="false"
       IgnoreExitCode="false" />
+
     <Message Importance="High"
       Text="[RestoreDotnetTools] Completed dotnet tool restore successfully." />
   </Target>
