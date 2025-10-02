@@ -2,20 +2,10 @@
   <!-- Skip in Release builds to avoid Swagger CLI issues in containers -->
   <Target Name="SwaggerToFile" AfterTargets="AfterBuild"
     Condition="'$(Configuration)' != 'Release'">
+    <Message Importance="high" Text="Genearting Spec.Json" />
 
-    <!-- Log purpose -->
-    <Message Importance="high" Text="Generating Spec.json" />
-
-    <!-- Run the Swagger CLI with diagnostics -->
     <Exec
       EnvironmentVariables="SWAGGER_TO_FILE=true"
-      Command="dotnet swagger tofile --output $(SolutionRoot)Spec.json $(OutputPath)$(AssemblyName).dll v1 -v diag"
-      ConsoleToMSBuild="true">
-      <Output TaskParameter="ConsoleOutput" PropertyName="SwaggerToFileOutput" />
-    </Exec>
-
-    <!-- Log all output captured from the command -->
-    <Message Importance="high" Text="[SwaggerToFile] Output: $(SwaggerToFileOutput)" />
-
+      Command="dotnet swagger tofile --output $(SolutionRoot)Spec.json $(OutputPath)$(AssemblyName).dll v1" />
   </Target>
 </Project>

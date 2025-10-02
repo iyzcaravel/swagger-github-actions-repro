@@ -3,16 +3,9 @@
   <Target Name="RestoreDotnetTools" BeforeTargets="Build">
     <Message Importance="High" Text="[RestoreDotnetTools] Starting dotnet tool restore..." />
 
-    <!-- Run dotnet tool restore and capture output -->
-    <Exec Command="dotnet tool restore -v diag"
+    <Exec Command="dotnet tool restore"
       ContinueOnError="false"
-      IgnoreExitCode="false"
-      ConsoleToMSBuild="true">
-      <Output TaskParameter="ConsoleOutput" PropertyName="RestoreDotnetToolsOutput" />
-    </Exec>
-
-    <!-- Log combined output -->
-    <Message Importance="High" Text="[RestoreDotnetTools] Output: $(RestoreDotnetToolsOutput)" />
+      IgnoreExitCode="false" />
 
     <Message Importance="High"
       Text="[RestoreDotnetTools] Completed dotnet tool restore successfully." />
