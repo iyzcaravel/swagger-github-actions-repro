@@ -39,8 +39,3 @@ runs:
       run: dotnet restore
       working-directory: ${{ inputs.working-directory }}
       shell: bash
-
-    - name: Restore tools
-      run: dotnet tool restore
-      working-directory: ${{ inputs.working-directory }}
-      shell: bash
